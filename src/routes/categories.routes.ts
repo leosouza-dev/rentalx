@@ -8,7 +8,12 @@ categoriesRoutes.post('/', (request, response) => {
   const { name, description } = request.body;
   const category = categoriesRepository.create({ name, description });
 
-  return response.status(201).json({ category });
+  return response.status(201).json(category);
+});
+
+categoriesRoutes.get('/', (request, response) => {
+  const categories = categoriesRepository.list();
+  return response.status(200).json(categories);
 });
 
 export { categoriesRoutes };
