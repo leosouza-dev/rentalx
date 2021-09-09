@@ -7,13 +7,13 @@ class Category {
     }
   }
 
-    id?: string;
+  id?: string;
 
-    name: string;
+  name: string;
 
-    description: string;
+  description: string;
 
-    createdAt: Date;
+  createdAt: Date;
 }
 
 export { Category };
