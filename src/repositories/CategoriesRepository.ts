@@ -1,18 +1,14 @@
 import { Category } from '../model/Category';
+import { ICategoriesRepository, ICreateCategoryDTO } from './ICategoriesRepository';
 
-interface ICreateCategoryDTO{
-    name: string;
-    description: string;
-}
-
-class CategoriesRepository {
+class CategoriesRepository implements ICategoriesRepository {
     private categories: Category[];
 
     constructor() {
       this.categories = [];
     }
 
-    create({ name, description }: ICreateCategoryDTO) : Category {
+    create({ name, description }: ICreateCategoryDTO) : void {
       const category = new Category();
 
       // esse método poderia ser o acesso as props ou receber o valor no ctor
@@ -23,7 +19,6 @@ class CategoriesRepository {
       });
 
       this.categories.push(category);
-      return category;
     }
 
     list() : Category[] {
