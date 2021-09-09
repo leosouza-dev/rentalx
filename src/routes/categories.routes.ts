@@ -3,6 +3,8 @@ import { CategoriesRepository } from '../repositories/CategoriesRepository';
 import { CreateCategoryService } from '../services/CreateCategoryService';
 
 const categoriesRoutes = Router();
+
+// poderia ser de outro tipo que implementa a interface e continuaria funcionando - devido a interf.
 const categoriesRepository = new CategoriesRepository();
 
 categoriesRoutes.post('/', (request, response) => {
